@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pkill -f \"next dev\")",
+      "Read(//Users/himanshu/Documents/boilerplate-AIC-backend/boilerplate_app/**)",
+      "Read(//Users/himanshu/Documents/boilerplate-AIC-backend/**)"
+    ]
+  }
+}

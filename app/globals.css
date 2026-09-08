@@ -1,0 +1,99 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* Configure dark mode to use class strategy instead of system preference */
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --shadowgrayshadow-2: rgba(15, 23, 42, 0.02);
+  --shadowgrayshadow-4: rgba(15, 23, 42, 0.04);
+  --shadowgrayshadow-6: rgba(15, 23, 42, 0.06);
+  --shadowgrayshadow-8: rgba(15, 23, 42, 0.08);
+  --bg-white-0: #ffffff;
+  --surface: #ffffff;
+  --surface-muted: #fafafa;
+  --surface-sunken: #f4f4f5;
+  --border-subtle: #e4e4e7;
+  --text-strong: #18181b;
+  --text-muted: #71717a;
+  --accent: #16a34a;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* Dark mode variables - only applied when .dark class is on html */
+html.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --shadowgrayshadow-2: rgba(15, 23, 42, 0.15);
+  --shadowgrayshadow-4: rgba(15, 23, 42, 0.3);
+  --shadowgrayshadow-6: rgba(15, 23, 42, 0.38);
+  --shadowgrayshadow-8: rgba(15, 23, 42, 0.45);
+  --bg-white-0: #0f0f0f;
+  --surface: #0f0f10;
+  --surface-muted: #121214;
+  --surface-sunken: #18181b;
+  --border-subtle: #27272a;
+  --text-strong: #fafafa;
+  --text-muted: #a1a1aa;
+  --accent: #22c55e;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+  letter-spacing: -0.006em;
+}
+
+#__next,
+body > div:first-child {
+  height: 100%;
+}
+
+/* Custom thin scrollbar that fits the zinc palette */
+.scrollbar-zinc::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.scrollbar-zinc::-webkit-scrollbar-track {
+  background: transparent;
+}
+.scrollbar-zinc::-webkit-scrollbar-thumb {
+  background: #e4e4e7;
+  border-radius: 999px;
+}
+.scrollbar-zinc::-webkit-scrollbar-thumb:hover {
+  background: #d4d4d8;
+}
+html.dark .scrollbar-zinc::-webkit-scrollbar-thumb {
+  background: #3f3f46;
+}
+html.dark .scrollbar-zinc::-webkit-scrollbar-thumb:hover {
+  background: #52525b;
+}
+
+/* Highlight overlay for cited chunk text in the PDF text layer */
+.rag-highlight {
+  background-color: rgba(16, 185, 129, 0.35);
+  color: inherit;
+  border-radius: 2px;
+  padding: 0 1px;
+  box-shadow: 0 0 0 1px rgba(16, 185, 129, 0.45);
+  transition: background-color 150ms ease;
+}
+html.dark .rag-highlight {
+  background-color: rgba(16, 185, 129, 0.45);
+}
