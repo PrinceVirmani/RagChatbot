@@ -82,7 +82,7 @@ export default function ChatPage() {
                 )}
               </div>
             </div>
-            <div className="flex items-center gap-1.5 shrink-0">
+            {/* <div className="flex items-center gap-1.5 shrink-0">
               <Link
                 href="/admin"
                 className="inline-flex items-center gap-1.5 text-[12px] font-medium text-zinc-700 dark:text-zinc-300 hover:text-emerald-600 dark:hover:text-emerald-400 px-3 py-1.5 rounded-[10px] border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 hover:border-emerald-500 transition-colors shadow-[0_1px_2px_rgba(15,23,42,0.04)]"
@@ -99,7 +99,7 @@ export default function ChatPage() {
               >
                 <X size={14} />
               </button>
-            </div>
+            </div> */}
           </div>
           {/* Per-category doc picker (preserved for re-enable):
           <PdfSwitcher
